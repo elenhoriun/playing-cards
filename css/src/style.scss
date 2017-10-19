@@ -1,0 +1,102 @@
+body{
+
+}
+
+/* Layout */
+.ba-container{
+	padding-left: 20px;
+	padding-right: 20px;
+	max-width: 1200px;
+}
+
+.ba-header {
+	margin: 10px auto;
+	text-align: center;
+	font-size: 48px;
+	color: grey;
+}
+
+.ba-card {
+	position: relative;
+	perspective: 800px;
+	border: 2px solid transparent;
+	margin-bottom: 15px;
+
+
+	&__frame {
+		width: 183px;
+		height: 256px;
+		text-align: center;
+		
+		backface-visibility: hidden;
+		transition: transform ease .4s;
+		border-radius: 8px;
+	}
+
+	&__front {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+		transform: rotateY(180deg);
+		border: 2px solid #333;
+		background-color: #fff;
+		
+		&--red {
+			color: red;
+			
+		}
+
+		&--black {
+			color: black;
+		}
+	}
+
+	&__back {
+		z-index: 2;
+		background: #333 url(../img/back.png) 50% no-repeat;
+		background-size: cover;
+
+
+	}
+
+	&:hover {
+		.ba-card__front {
+			transform: rotateY(0deg);
+		}
+
+		.ba-card__back {
+			transform: rotateY(-180deg);
+		}
+	}
+
+	&__name {
+		font-size: 42px;
+
+		&--top {
+			position: absolute;
+			top: 5px;
+			left: 10px;
+		}
+
+		&--bottom {
+			position: absolute;
+			bottom: 5px;
+			right: 10px;
+		}
+	}
+
+	&__icon {
+		font-size: 72px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+}
+
+
+
